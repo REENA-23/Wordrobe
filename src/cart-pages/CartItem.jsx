@@ -8,14 +8,12 @@ import {
 
 export default function CartItem() {
   return (
-    <div className="relative flex gap-4 md:gap-6">
-
-      {/* PRODUCT IMAGE */}
-      <div className="w-[100px] h-[120px] md:w-[120px] md:h-[140px] border rounded-md bg-gray-100" />
+    <div className="relative flex gap-4 md:gap-6 items-stretch">
+      {/*  PRODUCT IMAGE (MATCH HEIGHT WITH CONTENT) */}
+      <div className="w-[100px] md:w-[150px] border rounded-md bg-gray-100 self-stretch" />
 
       {/* PRODUCT DETAILS */}
-      <div className="flex-1">
-
+      <div className="flex-1 flex flex-col">
         {/* TITLE + SHARE */}
         <div className="flex justify-between items-start">
           <div>
@@ -30,20 +28,18 @@ export default function CartItem() {
               <span className="text-orange-500 text-xs">2500 off</span>
             </div>
 
-            {/* OFFER */}
-            <p className="text-red-500 text-xs mt-1">
+            {/* OFFER (gap reduced) */}
+            <p className="text-red-500 text-xs mt-[2px]">
               Save 20% on Your Purchase Today.
             </p>
           </div>
 
           {/* SHARE + HOVER ICONS */}
           <div className="relative group">
-            {/* SHARE (always visible) */}
             <button className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200">
               <FiShare2 size={16} />
             </button>
 
-            {/* HOVER ICONS */}
             <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 flex gap-2 opacity-0 group-hover:opacity-100 transition">
               <button className="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center">
                 <FiX size={16} />
@@ -62,8 +58,8 @@ export default function CartItem() {
           <span className="line-through text-gray-400">₹60</span>
         </div>
 
-        {/* SIZE */}
-        <p className="text-sm mt-3">
+        {/* SIZE (gap removed) */}
+        <p className="text-sm mt-1">
           Size : <span className="font-medium">S</span>
         </p>
 

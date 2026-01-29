@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-// pages
+// product pages
 import Home from "./pages/Home";
 import Dresses from "./pages/Dresses";
 import Coordset from "./pages/Coordset";
@@ -9,14 +9,16 @@ import Suitset from "./pages/Suitset";
 import Tops from "./pages/Tops";
 import Lahenga from "./pages/Lahenga";
 
-// home-pages (icon pages)
+// icon pages
 import Search from "./home-pages/SearchOverlay";
 import Favourite from "./home-pages/WishlistDrawer";
 import Cart from "./cart-pages/Cart";
 import Checkout from "./cart-pages/Checkout";
 import Person from "./home-pages/LoginModal";
-import Payment from "./payment-pages/Payment";
 
+// payment pages
+import Payment from "./payment-pages/Payment";
+import PaymentMethodPage from "./payment-pages/PaymentMethodPage";
 
 export default function App() {
   return (
@@ -34,10 +36,14 @@ export default function App() {
       <Route path="/search" element={<Search />} />
       <Route path="/favourite" element={<Favourite />} />
       <Route path="/cart" element={<Cart />} />
-      <Route path="/checkout" element={<Checkout/>}/>
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="/account" element={<Person />} />
+
+      {/* payment flow */}
       <Route path="/payment" element={<Payment />} />
-      
+      <Route path="/payment-method" element={<PaymentMethodPage />} />
+      <Route path="/payment-method/upi" element={<PaymentMethodPage />} />
+      <Route path="/payment-method/card" element={<PaymentMethodPage />} />
     </Routes>
   );
 }

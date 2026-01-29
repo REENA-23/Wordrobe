@@ -1,10 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom";
-
-export default function PaymentSummary() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isPaymentPage = location.pathname === "/payment";
-
+export default function PaymentSummary({ onMakePayment }) {
   return (
     <div
       className="
@@ -91,12 +85,10 @@ export default function PaymentSummary() {
         </div>
       </div>
 
-      {/* PUSH BUTTON TO BOTTOM */}
+      {/* BUTTON */}
       <div className="mt-auto pt-6">
         <button
-          onClick={() => {
-            if (!isPaymentPage) navigate("/payment");
-          }}
+          onClick={onMakePayment}
           className="
             w-full
             bg-orange-500
@@ -109,7 +101,7 @@ export default function PaymentSummary() {
             transition
           "
         >
-          {isPaymentPage ? "Make Payment" : "Place Order"}
+          Make Payment
         </button>
       </div>
     </div>
